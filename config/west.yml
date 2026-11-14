@@ -29,3 +29,6 @@ manifest:
       revision: main
   self:
     path: config
+
+- name: zmk-driver-hires-dial
+  remote: sekigon-gonnoc
