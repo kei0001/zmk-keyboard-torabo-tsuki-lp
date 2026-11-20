@@ -82,9 +82,6 @@
 &trans  &kp E    &hml LSHFT I  &hml LALT A  &hml LGUI O  &hml LCTRL COMMA  &trans   &trans     &hmr RCTRL K  &hmr RGUI T  &hmr RALT N  &hmr RSHFT S  &kp H   &trans
 &trans  &kp Z    &kp X         &kp C        &kp V        &kp DOT           &trans   &trans     &kp G         &kp D        &kp M        &kp J         &kp B   &trans
 &trans  &kp ESC  &trans        &trans       &lt 3 LANG2  &kp SPACE         &kp RET  &lt 1 TAB  &lt 2 LANG1   &none        &none        &trans        &trans  &trans
-#if defined(TORABO_TSUKI_LP_INPUT_HIRES_DIAL)
-&mkp MCLK
-#endif
             >;
         };
 
@@ -96,9 +93,6 @@
 &trans  &kp COLON  &kp N4  &kp N5  &kp N6  &trans  &trans  &trans  &kp LCTRL   &kp LGUI   &kp LALT  &kp LSHFT  &trans     &trans
 &trans  &kp N0     &kp N1  &kp N2  &kp N3  &trans  &trans  &trans  &kp PLUS    &kp MINUS  &kp STAR  &kp FSLH   &trans     &trans
 &trans  &trans     &trans  &trans  &trans  &trans  &trans  &trans  &caps_word  &trans     &trans    &trans     &trans     &trans
-#if defined(TORABO_TSUKI_LP_INPUT_HIRES_DIAL)
-&mkp MCLK
-#endif
             >;
         };
 
@@ -110,9 +104,6 @@
 &trans  &kp EQUAL  &trans    &kp AMPS   &kp LBKT  &kp RBKT   &trans  &trans  &kp STAR  &kp SQT   &kp TILDE  &kp FSLH   &kp HASH   &trans
 &trans  &trans     &kp SEMI  &kp COLON  &kp PIPE  &trans     &trans  &trans  &trans    &kp DLLR  &kp AT     &trans     &kp BSLH   &trans
 &trans  &trans     &trans    &trans     &kp EXCL  &kp QMARK  &trans  &trans  &kp TAB   &trans    &trans     &trans     &trans     &trans
-#if defined(TORABO_TSUKI_LP_INPUT_HIRES_DIAL)
-&mkp MCLK
-#endif
             >;
         };
 
@@ -124,9 +115,6 @@
 &trans  &trans          &kp LSHFT       &kp LCTRL        &kp LGUI      &kp LCTRL     &trans  &trans  &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &trans  &trans
 &trans  &trans          &mmv MOVE_UP    &mkp LCLK        &mkp RCLK     &trans        &trans  &trans  &trans    &trans    &trans  &trans     &trans  &trans
 &trans  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &trans        &kp TAB       &trans  &trans  &trans    &trans    &trans  &trans     &trans  &trans
-#if defined(TORABO_TSUKI_LP_INPUT_HIRES_DIAL)
-&mkp MCLK
-#endif
             >;
         };
 
@@ -138,36 +126,19 @@
 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-#if defined(TORABO_TSUKI_LP_INPUT_HIRES_DIAL)
-&mkp MCLK
-#endif
             >;
         };
 
     };
 };
+
 #if defined(TORABO_TSUKI_LP_INPUT_HIRES_DIAL)
-/* Default layer: vertical scrolling. */
 &{/keymap/layer_0} {
-    sensor-bindings = <&hires_dial_scroll 20 1>;
+    sensor-bindings = <&hires_dial_scroll 25 1>;
 };
 
-/* Number layer: faster, with more wheel motion per turn. */
 &{/keymap/layer_1} {
-    sensor-bindings = <&hires_dial_scroll 10 1>;
-};
-
-/* Symbol layer: volume adjustment. */
-&{/keymap/layer_2} {
     sensor-bindings = <&hires_dial_encoder C_VOL_UP C_VOL_DN>;
 };
 
-/* Navigation layer: horizontal scrolling. */
-&{/keymap/layer_3} {
-    sensor-bindings = <&hires_dial_hscroll 20 1>;
-};
-
-&{/keymap/layer_4} {
-    sensor-bindings = <&hires_dial_scroll 20 1>;
-};
 #endif
