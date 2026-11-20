@@ -27,8 +27,8 @@ manifest:
     - name: zmk-feature-non-lipo-battery-management
       remote: sekigon-gonnoc
       revision: main
+    - name: zmk-driver-hires-dial
+      remote: sekigon-gonnoc
   self:
     path: config
 
-- name: zmk-driver-hires-dial
-  remote: sekigon-gonnoc
