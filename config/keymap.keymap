@@ -5,6 +5,10 @@
 #include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/pointing.h>
 
+#if defined(TORABO_TSUKI_LP_INPUT_HIRES_DIAL)
+#include <behaviors/hires_dial.dtsi>
+#endif
+
 / {
     behaviors {
         td0: tap_dance_0 {
@@ -127,3 +131,10 @@
 
     };
 };
+
+#if defined(TORABO_TSUKI_LP_INPUT_HIRES_DIAL)
+&{/keymap/layer_0} {
+    sensor-bindings = <&hires_dial_scroll 25 1>;
+};
+
+#endif
