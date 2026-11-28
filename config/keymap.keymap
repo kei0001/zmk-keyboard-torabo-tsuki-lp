@@ -52,6 +52,49 @@
             hold-trigger-on-release;
             bindings = <&kp>, <&kp>;
         };
+
+        td4_ht: td4_ht {
+            compatible = "zmk,behavior-hold-tap";
+            display-name = "4-action hold-tap";
+            #binding-cells = <2>;
+            flavor = "hold-preferred";
+            tapping-term-ms = <200>;
+            bindings = <&kp>, <&kp>;
+        };
+
+        td4_ht1: td4_ht1 {
+            compatible = "zmk,behavior-hold-tap";
+            display-name = "4-action hold-tap";
+            #binding-cells = <2>;
+            flavor = "hold-preferred";
+            tapping-term-ms = <200>;
+            bindings = <&none>, <&none>;
+        };
+
+        td4: td4 {
+            compatible = "zmk,behavior-tap-dance";
+            display-name = "td4";
+            #binding-cells = <0>;
+            tapping-term-ms = <150>;
+            bindings = <&td4_ht LG(X) LG(C)>, <&td4_ht2 0 LG(V)>;
+        };
+
+        td4_ht2: td4_ht2 {
+            compatible = "zmk,behavior-hold-tap";
+            display-name = "4-action hold-tap";
+            #binding-cells = <2>;
+            flavor = "hold-preferred";
+            tapping-term-ms = <200>;
+            bindings = <&none>, <&kp>;
+        };
+
+        td41: td41 {
+            compatible = "zmk,behavior-tap-dance";
+            display-name = "td41";
+            #binding-cells = <0>;
+            tapping-term-ms = <150>;
+            bindings = <&td4_ht LC(J) LC(K)>, <&td4_ht LC(L) LC(SEMI)>;
+        };
     };
 
     combos {
@@ -81,7 +124,7 @@
 &trans  &kp Q    &kp L         &kp U        &kp MINUS    &kp BSPC                              &kp F         &kp W        &kp R        &kp Y         &kp P   &trans
 &trans  &kp E    &hml LSHFT I  &hml LALT A  &hml LGUI O  &hml LCTRL COMMA  &trans   &trans     &hmr RCTRL K  &hmr RGUI T  &hmr RALT N  &hmr RSHFT S  &kp H   &trans
 &trans  &kp Z    &kp X         &kp C        &kp V        &kp DOT           &trans   &trans     &kp G         &kp D        &kp M        &kp J         &kp B   &trans
-&trans  &kp ESC  &trans        &trans       &lt 3 LANG2  &kp SPACE         &kp RET  &lt 1 TAB  &lt 2 LANG1   &none        &none        &trans        &trans  &trans
+&trans  &kp ESC  &trans        &td4         &lt 3 LANG2  &kp SPACE         &kp RET  &lt 1 TAB  &lt 2 LANG1   &trans       &trans       &trans        &td41   &trans
             >;
         };
 
@@ -134,15 +177,7 @@
 
 #if defined(TORABO_TSUKI_LP_INPUT_HIRES_DIAL)
 &{/keymap/layer_0} {
-    sensor-bindings = <&hires_dial_scroll 40 1>;
-};
-
-&{/keymap/layer_1} {
-    sensor-bindings = <&hires_dial_hscroll 40 1>;
-};
-
-&{/keymap/layer_2} {
-    sensor-bindings = <&hires_dial_encoder C_VOL_UP C_VOL_DN>;
+    sensor-bindings = <&hires_dial_scroll 20 1>;
 };
 
 #endif
