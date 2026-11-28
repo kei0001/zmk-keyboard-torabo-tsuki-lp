@@ -93,7 +93,7 @@
             display-name = "td41";
             #binding-cells = <0>;
             tapping-term-ms = <150>;
-            bindings = <&td4_ht LC(J) LC(K)>, <&td4_ht LC(L) LC(SEMI)>;
+            bindings = <&td4_ht A LC(K)>, <&td4_ht1 0 0>;
         };
     };
 
@@ -124,7 +124,7 @@
 &trans  &kp Q    &kp L         &kp U        &kp MINUS    &kp BSPC                              &kp F         &kp W        &kp R        &kp Y         &kp P   &trans
 &trans  &kp E    &hml LSHFT I  &hml LALT A  &hml LGUI O  &hml LCTRL COMMA  &trans   &trans     &hmr RCTRL K  &hmr RGUI T  &hmr RALT N  &hmr RSHFT S  &kp H   &trans
 &trans  &kp Z    &kp X         &kp C        &kp V        &kp DOT           &trans   &trans     &kp G         &kp D        &kp M        &kp J         &kp B   &trans
-&trans  &kp ESC  &trans        &td4         &lt 3 LANG2  &kp SPACE         &kp RET  &lt 1 TAB  &lt 2 LANG1   &trans       &trans       &trans        &td41   &trans
+&trans  &kp ESC  &trans        &td4         &lt 3 LANG2  &kp SPACE         &kp RET  &lt 1 TAB  &lt 2 LANG1   &trans       &trans       &td41         &trans  &trans
             >;
         };
 
@@ -177,7 +177,11 @@
 
 #if defined(TORABO_TSUKI_LP_INPUT_HIRES_DIAL)
 &{/keymap/layer_0} {
-    sensor-bindings = <&hires_dial_scroll 20 1>;
+    sensor-bindings = <&hires_dial_scroll 40 1>;
+};
+
+&{/keymap/layer_1} {
+    sensor-bindings = <&hires_dial_encoder C_VOL_UP C_VOL_DN>;
 };
 
 #endif
