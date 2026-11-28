@@ -25,3 +25,23 @@ include:
     artifact-name: torabo_tsuki_lp_double_ball_right_central
   - board: bmp_boost
     shield: settings_reset
+  # Optional: left hires dial as peripheral, right trackball as central.
+  - board: bmp_boost
+    shield: torabo_tsuki_lp_left
+    snippet: "studio-rpc-usb-uart input-hires-dial"
+    artifact-name: torabo_tsuki_lp_left_dial_peripheral
+  - board: bmp_boost
+    shield: torabo_tsuki_lp_right
+    snippet: "studio-rpc-usb-uart split-central input-trackball input-listener split-input-hires-dial"
+    artifact-name: torabo_tsuki_lp_right_trackball_central_left_dial
+
+  # Optional: right hires dial as peripheral, left trackball as central.
+  - board: bmp_boost
+    shield: torabo_tsuki_lp_right
+    snippet: "studio-rpc-usb-uart input-hires-dial"
+    artifact-name: torabo_tsuki_lp_right_dial_peripheral
+  - board: bmp_boost
+    shield: torabo_tsuki_lp_left
+    snippet: "studio-rpc-usb-uart split-central input-trackball input-listener split-input-hires-dial"
+    artifact-name: torabo_tsuki_lp_left_trackball_central_right_dial
+
